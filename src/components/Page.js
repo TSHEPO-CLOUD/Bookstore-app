@@ -30,12 +30,14 @@ const Page = ({ books }) => {
           <img src="./" alt="progress" className="progress" />
           <div className="data">
             <h3>{progress}</h3>
+            <p>72%</p>
             <h5>Completed</h5>
           </div>
         </div>
         <div className="book-right">
           <div>
             <h3>Current chapter</h3>
+            <h4>Chapter 22</h4>
             <h3>{progress}</h3>
           </div>
           <button type="button">Update Progress</button>

@@ -1,10 +1,21 @@
-import PropTypes from 'prop-types';
-import React from 'react';
 
-const Page = ({ books }) => {
-  const {
-    category, title, author, progress,
-  } = books;
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
+
+function Page() {
+  const { booksReducer } = useSelector((state) => state);
+  const { books } = booksReducer;
+  const [booksDisplay, setBooksDisplay] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (books !== booksDisplay) {
+      setBooksDisplay(books);
+    }
+  });
+
+  if (booksDisplay) {
 
   return (
     <div className="books-container">
@@ -18,7 +29,7 @@ const Page = ({ books }) => {
             <button type="button" className="btn-special">
               Comments
             </button>
-            <button type="button" className="btn-special">
+            <button type="button" onClick={() => dispatch(removeBook(element.id))} className="btn-special">
               Remove
             </button>
             <button type="button" className="btn-special">
@@ -45,8 +56,10 @@ const Page = ({ books }) => {
       </div>
 
     </div>
-  );
+  )};
 };
+
+
 
 Page.propTypes = {
   books: PropTypes.shape({

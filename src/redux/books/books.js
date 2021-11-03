@@ -12,3 +12,22 @@ export const removeBook = (payload) => ({
  type: REMOVE_BOOK,
  payload,
 });
+
+const reducer = (state = initialState, action) => {
+ switch (action.type) {
+   case ADD_BOOK:
+   { const books = [...state.books, action.payload];
+     return { ...state, books }; }
+   case REMOVE_BOOK: {
+     const { books } = state;
+     let newBooks = [];
+     newBooks = books.filter((book) => book.id !== action.payload);
+     return {
+       books: [...newBooks],
+     }; }
+   default:
+     return state;
+ }
+};
+
+export default reducer;

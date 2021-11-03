@@ -1,4 +1,4 @@
-
+/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import booksReducer from './books/books';
@@ -12,4 +12,4 @@ const store = createStore(
   applyMiddleware(logger),
 );
 
-export default store
+export default store;

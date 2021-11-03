@@ -35,7 +35,7 @@ const Addbook = () => {
         <button type="button" onClick={submitBookToStore}>ADD BOOK</button>
       </div>
     </div>
-      );
-    };
-    
-    export default Addbook;
+  );
+};
+
+export default Addbook;

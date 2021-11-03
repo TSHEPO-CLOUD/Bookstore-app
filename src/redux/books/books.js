@@ -1,5 +1,6 @@
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const RECEIVE_BOOKS = 'bookStore/books/RECEIVE_BOOKS';
 
 const initialState = { books: [] };
 
@@ -25,6 +26,10 @@ const reducer = (state = initialState, action) => {
       return {
         books: [...newBooks],
       }; }
+    case RECEIVE_BOOKS: {
+      const { books } = action;
+      return { books };
+    }
     default:
       return state;
   }

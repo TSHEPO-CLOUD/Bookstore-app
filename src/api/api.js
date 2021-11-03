@@ -20,3 +20,20 @@ const getBooks = async () => axios.get(`${url}/apps/${appId}/books`).then((resul
   }
   return books;
 });
+
+const addBook = async (book) => axios
+  .post(`${url}/apps/${appId}/books`, {
+    item_id: book.item_id,
+    title: book.title,
+    category: book.category,
+  })
+  .then((result) => result.data);
+
+const removeBook = async (id) => axios
+  .delete(`${url}/apps/${appId}/books/${id}`, {
+    item_id: id,
+  })
+  .then((result) => result.data)
+  .catch(() => 'error');
+
+export default { getBooks, addBook, removeBook };

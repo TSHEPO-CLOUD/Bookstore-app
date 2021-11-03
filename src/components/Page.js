@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBook } from '../redux/api/api';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
@@ -18,7 +18,7 @@ function Page() {
     return (
       <div className="books-container">
         {booksDisplay.map((element) => (
-          <div className="bookcard" key={element.id}>
+          <div className="bookcard" key={element.title}>
             <div className="book-left">
               <h4 className="book_genre">{element.category}</h4>
               <h3 className="title">{element.title}</h3>
@@ -27,7 +27,7 @@ function Page() {
                 <button type="button" className="btn-special">
                   Comments
                 </button>
-                <button type="button" onClick={() => dispatch(removeBook(element.id))} className="btn-special">
+                <button type="button" onClick={() => dispatch(removeBook(element.item_id))} className="btn-special">
                   Remove
                 </button>
                 <button type="button" className="btn-special">
@@ -36,7 +36,6 @@ function Page() {
               </div>
             </div>
             <div className="book-center">
-              <img src="./" alt="progress" className="progress" />
               <div className="data">
                 <h3>0</h3>
                 <h6>Completed</h6>

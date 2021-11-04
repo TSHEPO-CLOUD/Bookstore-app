@@ -1,0 +1,48 @@
+.submit {
+  border-top: 2px solid #e8e8e8;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 200px;
+}
+
+.submit > h3 {
+  text-align: start;
+  color: #888;
+}
+
+.addbook {
+  display: flex;
+  gap: 20px;
+  height: 30px;
+  -moz-box-sizing: content-box; /* or `border-box` */
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.addbook > input {
+  width: 55%;
+  border: none;
+  border: 2px solid #afafaf;
+}
+
+.addbook > select {
+  width: 25%;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #afafaf;
+  color: #919191;
+}
+
+.addbook > button {
+  width: 18%;
+  background-color: #0290ff;
+  padding: 0;
+  font-family: arial, sans-serif;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 2px solid #afafaf;
+  border-radius: 2px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+}

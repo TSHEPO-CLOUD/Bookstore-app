@@ -1,19 +1,136 @@
-nav {
+.books-container {
+  width: 90%;
+  margin: auto;
+}
+
+.books-container > div {
+  border: 3px solid #e8e8e8;
+  border-radius: 4px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.progress {
+  width: 70px;
+  height: 70px;
+  border: 4px solid transparent;
+  border-radius: 80px;
+  background-image:
+    linear-gradient(#fff, #fff),
+    linear-gradient(to right, #307bbe, #379cf6);
+  background-origin: border-box;
+  border-image-slice: 1;
+}
+
+.bookcard {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 55px;
+}
+
+.book-left > h4 {
+  color: #919191;
+  font-size: 12px;
+}
+
+.book-left > h3 {
+  color: rgb(0, 0, 0);
+  text-transform: capitalize;
+  font-size: 22px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-special {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: arial, sans-serif;
+  color: #069;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.book-left {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.btn-special-middle {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: arial, sans-serif;
+  color: #069;
+  cursor: pointer;
+  border-left: 2px solid #e8e8e8;
+  border-right: 2px solid #e8e8e8;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+}
+
+.book-center {
+  display: -ms-grid;
+  display: grid;
+  width: 40%;
+  border-right: 2px solid #e8e8e8;
+  justify-items: end;
   align-items: center;
 }
 
-ul {
+.book-center > div {
   display: flex;
-  list-style: none;
-  gap: 13px;
-  margin-right: 15px;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
 }
 
-h1 {
-  font-size: 30px;
-  margin-left: 15px;
+.data > h6 {
+  color: #919191;
+}
 
+.data > h3 {
+  font-size: 30px;
+}
+
+.book-right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+}
+
+.book-right > div {
+  width: 70%;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.book-right > div > div > h3 {
+  color: #919191;
+  text-transform: uppercase;
+  font-size: 15px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.book-right > div > div > h4 {
+  font-size: 22px;
+  position: relative;
+}
+
+.book-right > div > button {
+  border: none;
+  height: 26px;
+  width: 160px;
+  background-color: #0290ff;
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}

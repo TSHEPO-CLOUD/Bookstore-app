@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/api/api';
+import { removeBook, addBook } from '../redux/api/api';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
@@ -11,6 +11,7 @@ function Page() {
   useEffect(() => {
     if (books !== booksDisplay) {
       setBooksDisplay(books);
+      dispatch(addBook(books));
     }
   });
 
@@ -37,7 +38,6 @@ function Page() {
             </div>
             <div className="book-center">
               <div className="data">
-                <h3>0</h3>
                 <h6>Completed</h6>
               </div>
             </div>

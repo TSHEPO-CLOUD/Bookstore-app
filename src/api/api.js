@@ -27,7 +27,8 @@ const addBook = async (book) => axios
     title: book.title,
     category: book.category,
   })
-  .then((result) => result.data);
+  .then((result) => result.data)
+  .catch(() => 'error');
 
 const removeBook = async (id) => axios
   .delete(`${url}/apps/${appId}/books/${id}`, {

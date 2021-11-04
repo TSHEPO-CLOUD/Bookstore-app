@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook, addBook } from '../redux/api/api';
+import './style/page.css';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
